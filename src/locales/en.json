@@ -1,0 +1,68 @@
+{
+  "home": "Home",
+  "about": "About",
+  "skills": "Skills",
+  "projects": "Projects",
+  "contact": "Contact",
+
+  "hero": {
+  "titleLine1": "Hi, I’m <1>Madiyor</1>",
+  "titleLine2": "Frontend Developer",
+    "subtitle": "I build responsive and engaging web applications.",
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me"
+  },
+  "aboutSection": {
+    "title": "About Me",
+    "description": "I’m a frontend developer with a passion for creating intuitive, dynamic user experiences. I have experience working with HTML, CSS, and JavaScript, and I’m always eager to learn new technologies and improve my skills. Recently, I’ve been focusing on building modern web applications using React.",
+    "skillsTitle": "Skills",
+    "skills": {
+      "html": "HTML",
+      "css": "CSS",
+      "js": "JavaScript",
+      "scss": "SCSS",
+      "react": "React"
+    }
+  },
+  "projectSection": {
+  "title": "Projects",
+  "liveDemo": "Live Demo",
+  "github": "GitHub",
+  "details": "Details",
+  "audi": {
+    "title": "AUDI - RS",
+    "description": "Inspired by the Audi RS series...",
+    "details": "This project is a concept site designed for the Audi RS lineup. It's built with React and SCSS, and demonstrates a smooth UI/UX with a sporty aesthetic. The site is responsive and optimized for performance. It mimics a product landing page with interactive sections and fast loading."
+  },
+  "musicflow": {
+    "title": "MusicFlow",
+    "description": "A modern music player app...",
+    "details": "MusicFlow is a full-fledged frontend music app created using React. It fetches songs from a mock API, features playlist UI, responsive layout, and animated transitions. SCSS was used for styling and the design mimics Spotify-style interfaces."
+  },
+  "lavash": {
+    "title": "OqTepa Lavash",
+    "description": "Landing page for fast food...",
+    "details": "A modern landing page built with pure HTML, CSS, and JavaScript. It's designed for a fast food chain (Oq-Tepa Lavash), and features scroll animations, mobile-friendly layout, and stylish sections to showcase products."
+  }
+},
+"contactSection": {
+  "title": "Contact Me",
+  "form": {
+    "name": "Your Name",
+    "email": "Your Email",
+    "message": "Your Message",
+    "submit": "Send Message"
+  },
+  "formErrors": {
+    "name": "Please enter your name.",
+    "email": "Please enter your email.",
+    "emailInvalid": "Invalid email address.",
+    "message": "Please enter a message."
+  },
+  "successMessage": "Your message has been sent!",
+  "socialTitle": "Find Me On",
+  "address": "Tashkent, Uzbekistan"
+}
+
+
+}

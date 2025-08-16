@@ -1,0 +1,243 @@
+.header {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  padding: 1.2rem 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  &__logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: 1px;
+  }
+
+  &__burger {
+    display: none;
+    cursor: pointer;
+  }
+
+  &__nav {
+    .header__menu {
+      list-style: none;
+      display: flex;
+      gap: 1.8rem;
+
+      li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        position: relative;
+        transition: color 0.3s;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          width: 0%;
+          height: 2px;
+          background-color: #2563eb;
+          transition: width 0.3s;
+        }
+
+        &:hover {
+          color: #2563eb;
+
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &__lang {
+    display: flex;
+    gap: 0.6rem;
+
+    button {
+      border: none;
+      background-color: transparent;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+
+      &.active {
+        background-color: #2563eb;
+        color: #fff;
+      }
+    }
+  }
+
+  &.sticky {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+  // ✅ Responsive
+  @media (max-width: 840px) {
+    &__burger {
+      display: block;
+      color: #111;
+    }
+
+    &__nav {
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background-color: #fff;
+      border-top: 1px solid #eee;
+      margin-top: 1rem;
+
+      &.open {
+        max-height: 300px;
+      }
+
+      .header__menu {
+        flex-direction: column;
+        padding: 1rem 0;
+        gap: 1rem;
+      }
+    }
+
+    &__lang {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+.active-link {
+  color: #0011ffc4 !important;
+  border-bottom: 2px solid #0011ffc4;
+  transition: 0.3s;
+}
+
+// 🌙 Dark mode
+body.dark {
+  background-color: #0f172a;
+  color: #f1f5f9;
+
+  .header {
+    background-color: #1e293b;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    
+    &__menu {
+      background-color: #1e293b;
+    }
+
+    &__logo {
+      color: #fff;
+    }
+
+    &__nav {
+      .header__menu li a {
+        color: #e2e8f0;
+
+        &::after {
+          background-color: #60a5fa;
+        }
+
+        &:hover {
+          color: #60a5fa;
+        }
+      }
+    }
+
+    &__lang button {
+      color: #f1f5f9;
+
+      &:hover {
+        background-color: #334155;
+      }
+
+      &.active {
+        background-color: #3b82f6;
+        color: #fff;
+      }
+    }
+
+    &__burger {
+      color: #fff;
+    }
+  }
+
+  .active-link {
+    color: #3b82f6 !important;
+    border-bottom: 2px solid #3b82f6;
+  }
+}
+
+// 🌞 Toggle tugma
+.dark-toggle {
+  background: transparent;
+  border: none;
+  margin-left: 0.5rem;
+  color: #2563eb;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #1d4ed8;
+  }
+}
+
+.header__tools {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+// Responsive (mobil) dark-toggle joylashuvi to'g'rilash uchun)
+@media (max-width: 840px) {
+  .header__tools {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .header__lang {
+      flex: 1;
+      display: flex;
+      justify-content: start;
+      gap: 0.5rem;
+    }
+
+    .dark-toggle {
+      flex: 0;
+      margin-left: auto;
+      font-size: 1.2rem;
+      color: #2563eb;
+
+      &:hover {
+        color: #1d4ed8;
+      }
+    }
+  }
+}

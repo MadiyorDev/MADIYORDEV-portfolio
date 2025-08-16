@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.hero {
+  padding: 100px 20px;
+  background-color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  &__title {
+    font-size: 56px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.4;
+
+    span {
+      color: #2563eb;
+    }
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    color: #555;
+    margin: 20px 0 40px 0;
+    font-weight: 400;
+    max-width: 700px;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+
+  &-primary {
+    background-color: #2563eb;
+    color: #fff;
+    border: none;
+
+    &:hover {
+      background-color: #ececec;
+      color: #111;
+    }
+  }
+
+  &-outline {
+    background-color: transparent;
+    color: #2563eb;
+    border: 2px solid #2563eb;
+
+    &:hover {
+      background-color: #2563eb;
+      color: #fff;
+    }
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 840px) {
+  .hero__container {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero__title {
+    font-size: 40px;
+  }
+
+  .hero__subtitle {
+    font-size: 16px;
+    margin: 16px 0 32px 0;
+  }
+
+  .hero__buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    .btn {
+      width: 100%;
+      max-width: 320px;
+      padding: 12px 20px;
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 80px 16px;
+  }
+
+  .hero__title {
+    font-size: 32px;
+  }
+
+  .btn {
+    font-size: 15px;
+    padding: 10px 18px;
+  }
+}
+
+// 🌙 Dark mode (body.dark orqali)
+body.dark .hero {
+  background-color: #0f1e34;
+
+  &__title {
+    color: #f0f4ff;
+
+    span {
+      color: #3b82f6;
+    }
+  }
+
+  &__subtitle {
+    color: #cbd5e1;
+  }
+
+  &__buttons {
+    .btn-primary {
+      background-color: #3b82f6;
+      color: #fff;
+
+      &:hover {
+        background-color: #2563eb;
+      }
+    }
+
+    .btn-outline {
+      border-color: #3b82f6;
+      color: #3b82f6;
+
+      &:hover {
+        background-color: #3b82f6;
+        color: #fff;
+      }
+    }
+  }
+}

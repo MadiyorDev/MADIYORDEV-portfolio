@@ -1,0 +1,68 @@
+{
+  "home": "Bosh sahifa",
+  "about": "Men haqimda",
+  "skills": "Ko'nikmalar",
+  "projects": "Loyihalar",
+  "contact": "Bog'lanish",
+
+  "hero": {
+  "titleLine1": "Salom, men <1>Madiyor</1>",
+  "titleLine2": "Frontend Dasturchi",
+    "subtitle": "Men javob beruvchi va jozibali web ilovalarni yarataman.",
+    "viewProjects": "Loyihalarni Ko‘rish",
+    "contactMe": "Men Bilan Bog‘lanish"
+  },
+   "aboutSection": {
+    "title": "Men haqimda",
+    "description": "Men foydalanuvchi uchun qulay va dinamik veb-ilovalarni yaratishga qiziqqan frontend dasturchiman. HTML, CSS va JavaScript bilan ishlash tajribam bor, yangi texnologiyalarni o‘rganishga va ko‘nikmalarimni oshirishga doimo tayyorman. Hozirda zamonaviy veb-ilovalarni React orqali yaratishga e’tibor qaratmoqdaman.",
+    "skillsTitle": "Ko'nikmalar",
+    "skills": {
+      "html": "HTML",
+      "css": "CSS",
+      "js": "JavaScript",
+      "scss": "SCSS",
+      "react": "React"
+    }
+  },
+  "projectSection": {
+  "title": "Loyihalar",
+  "liveDemo": "Live Demo",
+  "github": "GitHub",
+  "details": "Batafsil",
+  "audi": {
+    "title": "AUDI - RS",
+    "description": "Audi RS seriyasidan ilhomlangan...",
+    "details": "Ushbu loyiha Audi RS avtomobillar liniyasi uchun yaratilgan kontseptual sayt hisoblanadi. Sayt React va SCSS yordamida qurilgan bo‘lib, silliq va jozibali foydalanuvchi interfeysini taqdim etadi. U responsiv (moslashuvchan) bo‘lib, samaradorlik uchun optimallashtirilgan. Sayt mahsulot sahifasi ko‘rinishini taqlid qiladi va interaktiv bo‘limlar hamda tez yuklanish bilan ajralib turadi."
+  },
+  "musicflow": {
+    "title": "MusicFlow",
+    "description": "Zamonaviy musiqa pleer ilovasi...",
+    "details": "MusicFlow — bu to‘liq funksional frontend musiqa ilovasi bo‘lib, React yordamida yaratilgan. U qo‘shiqlarni sun'iy API orqali olib keladi, pleer interfeysi, responsiv dizayn va animatsion o‘tishlarga ega. SCSS bilan bezatilgan va Spotify uslubidagi interfeysni eslatadi."
+  },
+  "lavash": {
+    "title": "OqTepa Lavash",
+    "description": "Fast food uchun landing sahifa...",
+    "details": "Bu loyiha HTML, CSS va JavaScript texnologiyalari yordamida yaratilgan zamonaviy landing sahifadir. U fast food tarmog‘i (Oq-Tepa Lavash) uchun mo‘ljallangan bo‘lib, sahifa bo‘ylab animatsiyalar, mobil qurilmalarga moslashuvchanlik va mahsulotlarni ko‘rsatish uchun zamonaviy dizayn bo‘limlariga ega."
+  }
+},
+"contactSection": {
+  "title": "Menga bog‘laning",
+  "form": {
+    "name": "Ismingiz",
+    "email": "Email manzilingiz",
+    "message": "Xabaringiz",
+    "submit": "Xabar yuborish"
+  },
+  "formErrors": {
+    "name": "Iltimos, ismingizni kiriting.",
+    "email": "Iltimos, email manzilingizni kiriting.",
+    "emailInvalid": "Noto‘g‘ri email manzil.",
+    "message": "Iltimos, xabar matnini kiriting."
+  },
+  "successMessage": "Xabaringiz yuborildi!",
+  "socialTitle": "Ijtimoiy tarmoqlarim",
+  "address": "Toshkent, O‘zbekiston"
+}
+
+
+}
