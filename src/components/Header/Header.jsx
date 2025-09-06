@@ -5,6 +5,9 @@ import { FaBars, FaTimes, FaMoon, FaSun } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import './Header.scss';
 
+// 🔹 qo‘shildi
+import SmoothText from '../../components/SmoothText/SmoothText';
+
 const Header = () => {
   const { t, i18n } = useTranslation();
   const [isSticky, setIsSticky] = useState(false);
@@ -90,22 +93,22 @@ const Header = () => {
           <ul className="header__menu">
             <li>
               <NavLink to="/" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={toggleMenu}>
-                {t('home')}
+                <SmoothText textKey="home" />
               </NavLink>
             </li>
             <li>
               <NavLink to="/about" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={toggleMenu}>
-                {t('about')}
+                <SmoothText textKey="about" />
               </NavLink>
             </li>
             <li>
               <NavLink to="/projects" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={toggleMenu}>
-                {t('projects')}
+                <SmoothText textKey="projects" />
               </NavLink>
             </li>
             <li>
               <NavLink to="/contact" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={toggleMenu}>
-                {t('contact')}
+                <SmoothText textKey="contact" />
               </NavLink>
             </li>
           </ul>
@@ -113,9 +116,24 @@ const Header = () => {
 
         <div className="header__tools">
           <div className="header__lang">
-            <button className={currentLang === 'EN' ? 'active' : ''} onClick={() => changeLanguage('EN')}>EN</button>
-            <button className={currentLang === 'UZ' ? 'active' : ''} onClick={() => changeLanguage('UZ')}>UZ</button>
-            <button className={currentLang === 'RU' ? 'active' : ''} onClick={() => changeLanguage('RU')}>RU</button>
+            <button
+              className={currentLang === 'EN' ? 'active' : ''}
+              onClick={() => changeLanguage('EN')}
+            >
+              <SmoothText textKey="EN" />
+            </button>
+            <button
+              className={currentLang === 'UZ' ? 'active' : ''}
+              onClick={() => changeLanguage('UZ')}
+            >
+              <SmoothText textKey="UZ" />
+            </button>
+            <button
+              className={currentLang === 'RU' ? 'active' : ''}
+              onClick={() => changeLanguage('RU')}
+            >
+              <SmoothText textKey="RU" />
+            </button>
           </div>
           <button className="dark-toggle" onClick={toggleDarkMode}>
             {isDarkMode ? <FaSun size={18} /> : <FaMoon size={18} />}

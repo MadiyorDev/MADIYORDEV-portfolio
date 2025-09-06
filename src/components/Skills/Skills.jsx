@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ProjectModal from '../Modal/ProjectModal';
 import './Skills.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -6,25 +6,23 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import SmoothText from '../../components/SmoothText/SmoothText'; // 🔹 qo‘shildi
 
 const Skills = () => {
-  const { t } = useTranslation();
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
-  const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const defaultProjects = [
+  const projects = [
     {
       id: 'audi',
       title: 'AUDI - RS',
       images: ['/project/image1.png', '/project/image2.png', '/project/image3.png'],
       tags: ['React', 'SCSS'],
-      description: t('projectSection.audi.description'),
+      descriptionKey: 'projectSection.audi.description',
       liveDemo: 'https://audi-rs.vercel.app',
       github: 'https://github.com/MadiyorDev/AUDI-RS',
     },
@@ -33,31 +31,34 @@ const Skills = () => {
       title: 'MusicFlow',
       images: ['/project/music1.png', '/project/music2.png', '/project/music3.png'],
       tags: ['React', 'SCSS', 'API', 'JSON'],
-      description: t('projectSection.musicflow.description'),
+      descriptionKey: 'projectSection.musicflow.description',
       liveDemo: 'https://music-flow-sage.vercel.app',
       github: 'https://github.com/MadiyorDev/MusicFlow',
+    },
+    {
+      id: 'shopify',
+      title: 'SHOPIFY',
+      images: [
+        '/project/shopify1.png',
+        '/project/shopify2.png',
+        '/project/shopify3.png',
+        '/project/shopify4.png'
+      ],
+      tags: ['React', 'CSS', 'FIGMA'],
+      descriptionKey: 'projectSection.shopify.description',
+      liveDemo: 'https://shopify-nine-lac.vercel.app/',
+      github: 'https://github.com/MadiyorDev/ShOPIFY',
     },
     {
       id: 'lavash',
       title: 'OqTepa Lavash',
       images: ['/project/lavash1.png', '/project/lavash2.png', '/project/lavash3.png'],
       tags: ['HTML', 'CSS', 'JavaScript'],
-      description: t('projectSection.lavash.description'),
+      descriptionKey: 'projectSection.lavash.description',
       liveDemo: 'https://oq-tepa-lavash.vercel.app',
       github: 'https://github.com/MadiyorDev/Oq-Tepa-Lavash',
     }
   ];
-
-  // LocalStorage’dan projectlarni olish
-  useEffect(() => {
-    const savedProjects = JSON.parse(localStorage.getItem('projects'));
-    if (savedProjects && savedProjects.length > 0) {
-      setProjects(savedProjects);
-    } else {
-      localStorage.setItem('projects', JSON.stringify(defaultProjects));
-      setProjects(defaultProjects);
-    }
-  }, []);
 
   const openModal = (project) => {
     setSelectedProject(project);
@@ -77,7 +78,10 @@ const Skills = () => {
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="skills__title">{t('projectSection.title')}</h2>
+        <h2 className="skills__title">
+          <SmoothText textKey="projectSection.title" />
+        </h2>
+
         <div className="skills__cards">
           {projects.map((project, index) => (
             <motion.div
@@ -102,22 +106,41 @@ const Skills = () => {
                   ))}
                 </Swiper>
               </div>
+
               <h3 className="skills__card-title">{project.title}</h3>
-              <p className="skills__card-description">{project.description}</p>
+
+              <p className="skills__card-description">
+                <SmoothText textKey={project.descriptionKey} />
+              </p>
+
               <div className="skills__card-header">
                 {project.tags.map((tag, idx) => (
                   <span key={idx} className="skills__tag">{tag}</span>
                 ))}
               </div>
+
               <div className="skills__card-buttons">
-                <a href={project.liveDemo} className="btn btn--primary" target="_blank" rel="noopener noreferrer">
-                  {t('projectSection.liveDemo')}
+                <a
+                  href={project.liveDemo}
+                  className="btn btn--primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SmoothText textKey="projectSection.liveDemo" />
                 </a>
-                <a href={project.github} className="btn btn--secondary" target="_blank" rel="noopener noreferrer">
-                  {t('projectSection.github')}
+                <a
+                  href={project.github}
+                  className="btn btn--secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SmoothText textKey="projectSection.github" />
                 </a>
-                <button className="btn btn--primary" onClick={() => openModal(project)}>
-                  {t('projectSection.details')}
+                <button
+                  className="btn btn--primary"
+                  onClick={() => openModal(project)}
+                >
+                  <SmoothText textKey="projectSection.details" />
                 </button>
               </div>
             </motion.div>

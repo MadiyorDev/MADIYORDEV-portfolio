@@ -43,6 +43,11 @@
     "title": "OqTepa Lavash",
     "description": "Fast food uchun landing sahifa...",
     "details": "Bu loyiha HTML, CSS va JavaScript texnologiyalari yordamida yaratilgan zamonaviy landing sahifadir. U fast food tarmog‘i (Oq-Tepa Lavash) uchun mo‘ljallangan bo‘lib, sahifa bo‘ylab animatsiyalar, mobil qurilmalarga moslashuvchanlik va mahsulotlarni ko‘rsatish uchun zamonaviy dizayn bo‘limlariga ega."
+  },
+  "shopify": {
+    "title": "Shopify",
+    "description": "Figma dizayniga asoslangan landing sahifa.",
+    "details": "Ushbu loyiha Figma prototipiga asoslangan landing sahifadir. U React va CSS yordamida yaratilgan bo‘lib, responsiv dizayn va foydalanuvchi uchun qulay navigatsiyaga e'tibor qaratilgan. Dizayni toza va zamonaviy bo‘lib, jozibali foydalanuvchi tajribasini taqdim etishni maqsad qilgan. (Adabtive emas!)"
   }
 },
 "contactSection": {

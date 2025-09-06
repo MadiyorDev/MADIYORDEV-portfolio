@@ -43,6 +43,11 @@
     "title": "OqTepa Lavash",
     "description": "Landing page for fast food...",
     "details": "A modern landing page built with pure HTML, CSS, and JavaScript. It's designed for a fast food chain (Oq-Tepa Lavash), and features scroll animations, mobile-friendly layout, and stylish sections to showcase products."
+  },
+  "shopify": {
+    "title": "Shopify",
+    "description": "Landing page from Figma design.",
+    "details": "This project is a landing page designed based on a Figma prototype. It is built using React and CSS, focusing on responsive design and user-friendly navigation. The layout is clean and modern, aiming to provide an engaging user experience. (It's not adaptive!)"
   }
 },
 "contactSection": {

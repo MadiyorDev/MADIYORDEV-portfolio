@@ -12,7 +12,7 @@ import Header from '../../components/Header/Header';
 import ProjectModal from '../../components/Modal/ProjectModal';
 
 const Projects = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
   const [projects, setProjects] = useState([]);
@@ -58,7 +58,7 @@ const Projects = () => {
       localStorage.setItem('projects', JSON.stringify(defaultProjects));
       setProjects(defaultProjects);
     }
-  }, [t]); // tarjimalar o‘zgarsa ham update bo‘lsin
+  }, [t]); // tarjima o‘zgarsa ham yangilansin
 
   const openModal = (project) => {
     setSelectedProject(project);
@@ -84,8 +84,18 @@ const Projects = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
+          key={i18n.language} // 🔑 til almashganda smooth animatsiya
         >
-          <h2 className="skills__title">{t('projectSection.title')}</h2>
+          <motion.h2
+            className="skills__title"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            key={`title-${i18n.language}`}
+          >
+            {t('projectSection.title')}
+          </motion.h2>
+
           <div className="skills__cards">
             {projects.map((project, index) => (
               <motion.div
@@ -110,23 +120,70 @@ const Projects = () => {
                     ))}
                   </Swiper>
                 </div>
-                <h3 className="skills__card-title">{project.title}</h3>
-                <p className="skills__card-description full">{project.description}</p>
+
+                <motion.h3
+                  className="skills__card-title"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.6 }}
+                  key={`title-${project.id}-${i18n.language}`}
+                >
+                  {project.title}
+                </motion.h3>
+
+                <motion.p
+                  className="skills__card-description full"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.6 }}
+                  key={`desc-${project.id}-${i18n.language}`}
+                >
+                  {project.description}
+                </motion.p>
+
                 <div className="skills__card-header">
                   {project.tags.map((tag, idx) => (
                     <span key={idx} className="skills__tag">{tag}</span>
                   ))}
                 </div>
+
                 <div className="skills__card-buttons">
-                  <a href={project.liveDemo} className="btn btn--primary" target="_blank" rel="noopener noreferrer">
+                  <motion.a
+                    href={project.liveDemo}
+                    className="btn btn--primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.6 }}
+                    key={`live-${project.id}-${i18n.language}`}
+                  >
                     {t('projectSection.liveDemo')}
-                  </a>
-                  <a href={project.github} className="btn btn--secondary" target="_blank" rel="noopener noreferrer">
+                  </motion.a>
+
+                  <motion.a
+                    href={project.github}
+                    className="btn btn--secondary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.6 }}
+                    key={`github-${project.id}-${i18n.language}`}
+                  >
                     {t('projectSection.github')}
-                  </a>
-                  <button className="btn btn--primary" onClick={() => openModal(project)}>
+                  </motion.a>
+
+                  <motion.button
+                    className="btn btn--primary"
+                    onClick={() => openModal(project)}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.6 }}
+                    key={`details-${project.id}-${i18n.language}`}
+                  >
                     {t('projectSection.details')}
-                  </button>
+                  </motion.button>
                 </div>
               </motion.div>
             ))}
